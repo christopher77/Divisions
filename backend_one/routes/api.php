@@ -16,4 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+    // Route::get('/divisions', 'DivisionController@index')->name('divisions.all');
+    // Route::post('/divisions', 'DivisionController@store')->name('divisions.store');
+    // Route::get('/divisions/{expense}', 'DivisionController@show')->name('divisions.show');
+    // Route::put('/divisions/{expense}', 'DivisionController@update')->name('divisions.update');
+    // Route::delete('/divisions/{expense}', 'DivisionController@destory')->name('divisions.destroy');
 });
