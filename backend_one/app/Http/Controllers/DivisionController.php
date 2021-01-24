@@ -16,77 +16,62 @@ class DivisionController extends Controller
      */
     public function index()
     {
-        // $divisions = Division::all();
+        $divisions = Division::all()->sortByDesc('id');
+        // return $divisions;
         // return response()->json($divisions);
-        return view('divisions.index');
+        return view('divisions.index', compact('divisions'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
         return view('divisions.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(DivisionStoreRequest $request)
     {
+        // return $request->all();
+        $division = new Division();
 
-        //
+        $division->name = $request->name;
+        $division->superior_name = $request->superior_name;
+        $division->subdivisions = $request->subdivisions;
+        $division->level = $request->level;
+        $division->coworkers = $request->coworkers;
+        $division->ambassador = $request->ambassador;
+
+        // return $division;
+        $division->save();
+
+        return redirect()->route('divisions.show', $division);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Division  $division
-     * @return \Illuminate\Http\Response
-     */
-    public function show($division)
+    public function show(Division $division)
     {
         // return $division;
         return view('divisions.show', compact('division'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Division  $division
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Division $division)
     {
-        //
+        return view('divisions.edit', compact('division'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Division  $division
-     * @return \Illuminate\Http\Response
-     */
-    public function update(DivisionUpdateRequest $request, $id)
+    public function update(DivisionUpdateRequest $request, Division $division)
     {
-        $division = Division::find($id);
+        // $division = Division::find($id);
+        $division->name = $request->name;
+        $division->superior_name = $request->superior_name;
+        $division->subdivisions = $request->subdivisions;
+        $division->level = $request->level;
+        $division->coworkers = $request->coworkers;
+        $division->ambassador = $request->ambassador;
 
-        //
+        $division->save();
+
+        return redirect()->route('divisions.show', $division);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Division  $division
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Division $division)
     {
         $division->delete();

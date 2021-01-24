@@ -9,3 +9,4 @@ class Division extends Model
 {
     use HasFactory;
 }
+

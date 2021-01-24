@@ -14,13 +14,13 @@ class CreateDivisionsTable extends Migration
     public function up()
     {
         Schema::create('divisions', function (Blueprint $table) {
-            // $table->id();
-            $table->string('name');
-            $table->string('superior-name');
-            $table->integer('subdivisions');
+            $table->id();
+            $table->string('name')->unique();
+            $table->string('superior_name')->nullable();
+            $table->integer('subdivisions')->nullable();
             $table->integer('level');
             $table->integer('coworkers');
-            $table->string('embassador');
+            $table->string('ambassador')->nullable();
             $table->timestamps();
         });
     }

@@ -24,9 +24,9 @@ class DivisionStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=> 'required|max:45|unique:division,name',
-            'level'=>'required',
-            'coworkers'=>'required'
+            'name' => 'required|max:45|unique:divisions,name',
+            'level' => 'required',
+            'coworkers' => 'required',
             //
         ];
     }
