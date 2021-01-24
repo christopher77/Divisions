@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Division extends Model
 {
     use HasFactory;
-
     // protected $fillable = [
     //     'name',
     //     'superior_name',
@@ -17,6 +16,5 @@ class Division extends Model
     //     'coworkers',
     //     'ambassador'
     // ];
-
     protected $guarded = [];
 }
