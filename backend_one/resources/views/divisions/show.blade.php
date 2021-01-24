@@ -8,4 +8,10 @@
 <a href="{{route('divisions.edit',$division)}}">Editar Division</a>
 <p><strong>Numero de Subdivisiones:</strong></p>
 <p>{{$division->subdivisions}}</p>
+
+<form action="{{route('divisions.destroy', $division)}}" method="POST">
+  @csrf
+  @method('delete')
+  <button type="submit">Eliminar</button>
+</form>
 @endsection

@@ -28,3 +28,5 @@ Route::get('divisions/{division}', [DivisionController::class, 'show'])->name('d
 Route::get('divisions/{division}/edit', [DivisionController::class, 'edit'])->name('divisions.edit');
 
 Route::put('divisions/{division}', [DivisionController::class, 'update'])->name('divisions.update');
+
+Route::delete('divisions/{division}', [DivisionController::class, 'destroy'])->name('divisions.destroy');

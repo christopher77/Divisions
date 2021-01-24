@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title','Divisions create')
+@section('title','Divisions Edit')
 
 @section('content')
 <h1>Editar una division</h1>
@@ -9,8 +9,14 @@
   @method('put')
   <label>
     Nombre:
-    <input type="text" name="name" value="{{$division->name}}"><br>
+    <input type="text" name="name" value="{{old('name',$division->name)}}"><br>
   </label>
+
+  @error('name')
+    <small>*{{$message}}</small>
+    <br>
+  @enderror
+
   <label>
     Division Superior:    
     <input type="text" name="superior_name" value="{{$division->superior_name}}"><br>
@@ -21,12 +27,24 @@
   </label>
   <label>
     Nivel:    
-    <input type="number" name="level" value="{{$division->level}}"><br>
+    <input type="number" name="level" value="{{old('level',$division->level)}}"><br>
   </label>
+
+  @error('level')
+    <small>*{{$message}}</small>
+    <br>
+  @enderror
+
   <label>
     Colaboradores:    
-    <input type="number" name="coworkers" value="{{$division->coworkers}}"><br>
+    <input type="number" name="coworkers" value="{{old('level',$division->coworkers)}}"><br>
   </label>
+
+  @error('coworkers')
+    <small>*{{$message}}</small>
+    <br>
+  @enderror
+
   <label>
     Embajador:    
     <input type="text" name="ambassador" value="{{$division->ambassador}}"><br>

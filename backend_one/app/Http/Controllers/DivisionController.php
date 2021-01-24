@@ -30,18 +30,7 @@ class DivisionController extends Controller
 
     public function store(DivisionStoreRequest $request)
     {
-        // return $request->all();
-        $division = new Division();
-
-        $division->name = $request->name;
-        $division->superior_name = $request->superior_name;
-        $division->subdivisions = $request->subdivisions;
-        $division->level = $request->level;
-        $division->coworkers = $request->coworkers;
-        $division->ambassador = $request->ambassador;
-
-        // return $division;
-        $division->save();
+        $division = Division::create($request->all());
 
         return redirect()->route('divisions.show', $division);
     }
@@ -59,15 +48,7 @@ class DivisionController extends Controller
 
     public function update(DivisionUpdateRequest $request, Division $division)
     {
-        // $division = Division::find($id);
-        $division->name = $request->name;
-        $division->superior_name = $request->superior_name;
-        $division->subdivisions = $request->subdivisions;
-        $division->level = $request->level;
-        $division->coworkers = $request->coworkers;
-        $division->ambassador = $request->ambassador;
-
-        $division->save();
+        $division->update($request->all());
 
         return redirect()->route('divisions.show', $division);
     }
@@ -75,9 +56,7 @@ class DivisionController extends Controller
     public function destroy(Division $division)
     {
         $division->delete();
-        return response()->json([
-            'message' => 'division deleted'
-        ]);
+        return redirect()->route('divisions.index');
         //
     }
 }
