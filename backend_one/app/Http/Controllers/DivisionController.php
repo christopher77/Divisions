@@ -16,7 +16,7 @@ class DivisionController extends Controller
      */
     public function index()
     {
-        $divisions = Division::all()->sortByDesc('id');
+        $divisions = Division::all();
         // return $divisions;
         return  $divisions;
         // return view('divisions.index', compact('divisions'));

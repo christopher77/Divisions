@@ -1,7 +1,7 @@
 import React from "react";
-import { navigate } from "@reach/router";
 import Header from "../components/Header";
-import Table from "../components/Table";
+import Container from "../components/Container";
+import SelectorColumnas from "../components/SelectorColumnas";
 
 const baseUrl = "http://127.0.0.1:8000/divisions";
 
@@ -15,12 +15,19 @@ function Home() {
 			);
 			const datafinal = Object.values(dataDivisions);
 			setDivisions(datafinal);
-			console.log("data", datafinal);
 		}
 		getDivisions();
+
+		console.log("divisions", divisions);
 	}, []);
 
-	return <Table divisions={divisions} />;
+	return (
+		<div>
+			<Header />
+			<SelectorColumnas />
+			<Container divisions={divisions} />;
+		</div>
+	);
 }
 
 export default Home;
