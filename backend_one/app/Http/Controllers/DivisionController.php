@@ -18,8 +18,8 @@ class DivisionController extends Controller
     {
         $divisions = Division::all()->sortByDesc('id');
         // return $divisions;
-        // return response()->json($divisions);
-        return view('divisions.index', compact('divisions'));
+        return  $divisions;
+        // return view('divisions.index', compact('divisions'));
     }
 
     public function create()
