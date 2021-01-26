@@ -2,10 +2,10 @@ import React from "react";
 import Header from "../components/Header";
 import Container from "../components/Container";
 import SelectorColumnas from "../components/SelectorColumnas";
-import Search from "antd/lib/transfer/search";
 import RadioButton from "../components/RadioButton";
 import TitlePage from "../components/TitlePage";
 import Tabulator from "../components/Tabulator";
+import SearchBar from "../components/SearchBar";
 
 const baseUrl = "http://127.0.0.1:8000/divisions";
 
@@ -32,8 +32,8 @@ function Home() {
 			<Tabulator />
 			<RadioButton />
 			<SelectorColumnas />
-			<Search />
-			<Container divisions={divisions} />;
+			<SearchBar />
+			<Container divisions={divisions} />
 		</div>
 	);
 }
