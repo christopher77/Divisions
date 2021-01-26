@@ -5,7 +5,7 @@ import "antd/dist/antd.css";
 function Search() {
 	return (
 		<div>
-			<Input placeholder="Buscar"></Input>
+			<Input placeholder="Buscar" style={{ width: 200 }}></Input>
 		</div>
 	);
 }

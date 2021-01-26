@@ -26,13 +26,13 @@ function Home() {
 	}, []);
 
 	return (
-		<div>
+		<div style={{ margin: 20 }}>
 			<Header />
 			<TitlePage />
 			<Tabulator />
 			<RadioButton />
-			<Search />
 			<SelectorColumnas />
+			<Search />
 			<Container divisions={divisions} />;
 		</div>
 	);

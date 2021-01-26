@@ -79,7 +79,12 @@ function Container({ divisions }) {
 	}
 	return (
 		<div>
-			<Table columns={columns} dataSource={dataDivisions} onChange={onChange} />
+			<Table
+				columns={columns}
+				dataSource={dataDivisions}
+				onChange={onChange}
+				style={{ marginLeft: 20, marginRight: 20 }}
+			/>
 		</div>
 	);
 }

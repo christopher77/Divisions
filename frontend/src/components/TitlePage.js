@@ -1,5 +1,6 @@
 import { PageHeader, Button } from "antd";
 import "antd/dist/antd.css";
+import { UploadOutlined, DownloadOutlined } from "@ant-design/icons";
 
 function TitlePage() {
 	return (
@@ -11,8 +12,12 @@ function TitlePage() {
 					<Button key="3" type="primary">
 						+
 					</Button>,
-					<Button key="2">up</Button>,
-					<Button key="1">down</Button>,
+					<Button key="2">
+						<UploadOutlined />
+					</Button>,
+					<Button key="1">
+						<DownloadOutlined />
+					</Button>,
 				]}
 			></PageHeader>
 		</div>
