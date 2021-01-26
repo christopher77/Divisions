@@ -4,6 +4,7 @@ import {
 	BellOutlined,
 	QuestionCircleOutlined,
 } from "@ant-design/icons";
+import { Badge } from "antd";
 
 function Header() {
 	return (
@@ -19,7 +20,7 @@ function Header() {
 				alignItems: "center",
 			}}
 		>
-			<div style={{ display: "flex", margin: 10 }}>
+			<div style={{ display: "flex", margin: 10, color: "#fff" }}>
 				<div>
 					<img src="img/mandu_uno.png" alt="logo" />
 				</div>
@@ -39,6 +40,7 @@ function Header() {
 			<nav
 				style={{
 					display: "flex",
+					color: "#fff",
 				}}
 			>
 				<div style={{ padding: "0 1rem", cursor: "pointer", height: "100%" }}>
@@ -48,13 +50,13 @@ function Header() {
 					<QuestionCircleOutlined />
 				</div>
 				<div style={{ padding: "0 1rem", cursor: "pointer", height: "100%" }}>
-					<BellOutlined />
+					<Badge count={3}>
+						<BellOutlined style={{ color: "#fff" }} />
+					</Badge>
 				</div>
+				<div>Administrador</div>
 				<div style={{ padding: "0 1rem", cursor: "pointer", height: "100%" }}>
-					Administrador
-				</div>
-				<div>
-					<img src="img/mandu_uno.png"></img>
+					<img src="img/mandu_uno.png" alt="logo 2"></img>
 				</div>
 			</nav>
 		</div>
