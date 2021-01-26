@@ -9,4 +9,4 @@ function addDivisions(divisions) {
 	};
 }
 
-export { addDivisions };
+export { addDivisions, reset };
