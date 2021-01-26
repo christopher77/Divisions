@@ -21,28 +21,41 @@ function Header() {
 		>
 			<div style={{ display: "flex", margin: 10 }}>
 				<div>
-					<img></img>
+					<img src="img/mandu_uno.png" alt="logo" />
 				</div>
-				<div>Dashboard</div>
-				<div>Organizacion</div>
-				<div>Modelos</div>
-				<div>Seguimiento</div>
+				<div style={{ padding: "0 1rem", cursor: "pointer", height: "100%" }}>
+					Dashboard
+				</div>
+				<div style={{ padding: "0 1rem", cursor: "pointer", height: "100%" }}>
+					Organizacion
+				</div>
+				<div style={{ padding: "0 1rem", cursor: "pointer", height: "100%" }}>
+					Modelos
+				</div>
+				<div style={{ padding: "0 1rem", cursor: "pointer", height: "100%" }}>
+					Seguimiento
+				</div>
 			</div>
 			<nav
 				style={{
 					display: "flex",
 				}}
 			>
-				<div>
+				<div style={{ padding: "0 1rem", cursor: "pointer", height: "100%" }}>
 					<ShoppingOutlined />
 				</div>
-				<div>
+				<div style={{ padding: "0 1rem", cursor: "pointer", height: "100%" }}>
 					<QuestionCircleOutlined />
 				</div>
-				<div>
+				<div style={{ padding: "0 1rem", cursor: "pointer", height: "100%" }}>
 					<BellOutlined />
 				</div>
-				<div>Administrador</div>
+				<div style={{ padding: "0 1rem", cursor: "pointer", height: "100%" }}>
+					Administrador
+				</div>
+				<div>
+					<img src="img/mandu_uno.png"></img>
+				</div>
 			</nav>
 		</div>
 	);

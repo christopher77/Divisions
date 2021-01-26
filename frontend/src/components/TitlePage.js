@@ -6,6 +6,7 @@ function TitlePage() {
 	return (
 		<div>
 			<PageHeader
+				style={{ padding: 0 }}
 				ghost={false}
 				title="Organización"
 				extra={[
