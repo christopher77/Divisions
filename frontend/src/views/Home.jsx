@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import Container from "../components/Container";
 import SelectorColumnas from "../components/SelectorColumnas";
+import Search from "antd/lib/transfer/search";
 
 const baseUrl = "http://127.0.0.1:8000/divisions";
 
@@ -24,6 +25,7 @@ function Home() {
 	return (
 		<div>
 			<Header />
+			<Search />
 			<SelectorColumnas />
 			<Container divisions={divisions} />;
 		</div>
