@@ -11,8 +11,8 @@ function Header() {
 		<div
 			style={{
 				backgroundImage: "linear-gradient(to right,#2E52F8, #56A7F2)",
-				fontSize: "1.4rem",
-				height: "4rem",
+				fontSize: "1.2rem",
+				height: "4.5rem",
 				margin: -20,
 				marginBottom: 20,
 				display: "flex",
@@ -22,13 +22,17 @@ function Header() {
 		>
 			<div style={{ display: "flex", margin: 10, color: "#fff" }}>
 				<div>
-					<img src="img/mandu_uno.png" alt="logo" />
+					<img
+						src="img/mandu_uno.png"
+						alt="logo"
+						style={{ height: "2rem", width: "50px" }}
+					/>
 				</div>
 				<div style={{ padding: "0 1rem", cursor: "pointer", height: "100%" }}>
 					Dashboard
 				</div>
 				<div style={{ padding: "0 1rem", cursor: "pointer", height: "100%" }}>
-					Organizacion
+					Organización
 				</div>
 				<div style={{ padding: "0 1rem", cursor: "pointer", height: "100%" }}>
 					Modelos
@@ -56,7 +60,11 @@ function Header() {
 				</div>
 				<div>Administrador</div>
 				<div style={{ padding: "0 1rem", cursor: "pointer", height: "100%" }}>
-					<img src="img/mandu_uno.png" alt="logo 2"></img>
+					<img
+						src="img/mandu_dos.jpeg"
+						alt="logo 2"
+						style={{ height: "2rem", width: "50px" }}
+					></img>
 				</div>
 			</nav>
 		</div>

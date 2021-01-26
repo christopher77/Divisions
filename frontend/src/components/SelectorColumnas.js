@@ -4,7 +4,15 @@ import "antd/dist/antd.css";
 const { Option } = Select;
 
 function SelectorColumnas() {
-	//hacer fetch para llenar las options********************
+  //dataColumns puede ser traido en el initialstate
+	const dataColumns = [
+		"Divisiones",
+		"Division superior",
+		"Colaboradores",
+		"Nivel",
+		"Subdivisiones",
+		"Embajadores",
+	];
 	function onChange(value) {
 		console.log(`selected ${value}`);
 	}
@@ -34,7 +42,15 @@ function SelectorColumnas() {
 			filterOption={(input, option) =>
 				option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
 			}
-		></Select>
+		>
+			{dataColumns.map((division, index) => {
+				return (
+					<Option value={division} key={index}>
+						{division}
+					</Option>
+				);
+			})}
+		</Select>
 	);
 }
 

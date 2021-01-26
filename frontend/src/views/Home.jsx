@@ -11,7 +11,7 @@ const baseUrl = "http://127.0.0.1:8000/divisions";
 
 function Home() {
 	const [divisions, setDivisions] = React.useState([]);
-
+	//division puede ser puesto en initialstate
 	React.useEffect(() => {
 		async function getDivisions() {
 			const dataDivisions = await fetch(baseUrl).then((response) =>
