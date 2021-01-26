@@ -30,9 +30,21 @@ function Home() {
 			<Header />
 			<TitlePage />
 			<Tabulator />
-			<RadioButton />
-			<SelectorColumnas />
-			<SearchBar />
+			<div
+				style={{
+					display: "flex",
+					justifyContent: "space-between",
+					alignItems: "center",
+				}}
+			>
+				<RadioButton />
+				<div
+					style={{ display: "flex", justifyContent: "flex-end", margin: 20 }}
+				>
+					<SelectorColumnas />
+					<SearchBar />
+				</div>
+			</div>
 			<Container divisions={divisions} />
 		</div>
 	);
