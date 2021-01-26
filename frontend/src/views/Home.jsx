@@ -6,23 +6,22 @@ import RadioButton from "../components/RadioButton";
 import TitlePage from "../components/TitlePage";
 import Tabulator from "../components/Tabulator";
 import SearchBar from "../components/SearchBar";
+import { useAddDivisions } from "../redux/action-hooks";
 
 const baseUrl = "http://127.0.0.1:8000/divisions";
 
 function Home() {
-	const [divisions, setDivisions] = React.useState([]);
-	//division puede ser puesto en initialstate
+	const addDivisions = useAddDivisions();
+
 	React.useEffect(() => {
 		async function getDivisions() {
 			const dataDivisions = await fetch(baseUrl).then((response) =>
 				response.json()
 			);
 			const datafinal = Object.values(dataDivisions);
-			setDivisions(datafinal);
+			addDivisions(datafinal);
 		}
 		getDivisions();
-
-		console.log("divisions", divisions);
 	}, []);
 
 	return (
@@ -45,7 +44,7 @@ function Home() {
 					<SearchBar />
 				</div>
 			</div>
-			<Container divisions={divisions} />
+			<Container />
 		</div>
 	);
 }

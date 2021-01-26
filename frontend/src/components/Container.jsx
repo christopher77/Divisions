@@ -1,10 +1,9 @@
 import React from "react";
 import { Table } from "antd";
 import "antd/dist/antd.css";
+import { useDivisions } from "../redux/selectors";
 
-function Container({ divisions }) {
-	console.log("divisions de container==>", divisions);
-	//columns puede ser ttraido del initialstate
+function Container() {
 	const columns = [
 		{
 			title: "Division",
@@ -63,7 +62,7 @@ function Container({ divisions }) {
 		},
 	];
 
-	const dataDivisions = divisions;
+	const dataDivisions = useDivisions();
 
 	function onChange(pagination, filters, sorter, extra) {
 		console.log("params", pagination, filters, sorter, extra);
