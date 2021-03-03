@@ -6,15 +6,6 @@ import { useColumns } from "../redux/selectors";
 const { Option } = Select;
 
 function SelectorColumnas() {
-	//dataColumns puede ser traido en el initialstate
-	// const dataColumns = [
-	// 	"Divisiones",
-	// 	"Division superior",
-	// 	"Colaboradores",
-	// 	"Nivel",
-	// 	"Subdivisiones",
-	// 	"Embajadores",
-	// ];
 
 	const dataColumns = useColumns();
 

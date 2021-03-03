@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Input } from "antd";
 import "antd/dist/antd.css";
 import { useDivisions } from "../redux/selectors";
@@ -8,18 +8,16 @@ const { Search } = Input;
 
 function SearchBar() {
 	const [busqueda, setBusqueda] = React.useState("");
-	const dataDivisiones = useDivisions();
-	console.log("dataDivisiones=>", dataDivisiones);
-	const [divisiones2, setDivisiones2] = React.useState(dataDivisiones);
 
-	function sayIt() {
-		return console.log("ya cargo el useeffect", divisiones2);
-	}
+	const dataDivisiones = useDivisions();
+
+	console.log("dataDivisiones=>", dataDivisiones);
+
+	const [divisiones2, setDivisiones2] = React.useState([]);
 
 	React.useEffect(() => {
 		setDivisiones2(dataDivisiones);
-		sayIt();
-		// console.log("useeffc=>", divisiones2);
+		// console.log("ya cargo el useeffect", divisiones2);
 	}, []);
 
 	const addDivisions = useAddDivisions();
@@ -49,7 +47,7 @@ function SearchBar() {
 			<Search
 				placeholder="Buscar"
 				value={busqueda}
-				style={{ width: 200 }}
+				style={{ width: 200, marginLeft: "1rem" }}
 				onChange={handleChange}
 			/>
 		</div>

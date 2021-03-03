@@ -74,6 +74,7 @@ function Container() {
 				dataSource={dataDivisions}
 				onChange={onChange}
 				style={{ marginLeft: 20, marginRight: 20 }}
+				bordered
 			/>
 		</div>
 	);
