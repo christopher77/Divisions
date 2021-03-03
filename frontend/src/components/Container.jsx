@@ -1,19 +1,14 @@
 import React from "react";
 import { Table } from "antd";
 import "antd/dist/antd.css";
+import { useDivisions } from "../redux/selectors";
 
-function Container({ divisions }) {
-	console.log("divisions de container==>", divisions);
-
+function Container() {
 	const columns = [
 		{
 			title: "Division",
 			dataIndex: "name",
 			id: "name",
-			// sorter: {
-			// 	compare: (a, b) => a.name - b.name,
-			// 	multiple: 5,
-			// },
 		},
 		{
 			title: "Division Superior",
@@ -32,11 +27,6 @@ function Container({ divisions }) {
 			// filterMultiple: false,
 			// filteredValue: filteredInfo.name || null,
 			onFilter: (value, record) => record.superior_name.indexOf(value),
-
-			// sorter: {
-			// 	compare: (a, b) => a.superior_name - b.nsuperior_nameame,
-			// 	multiple: 4,
-			// },
 		},
 		{
 			title: "Colaboradores",
@@ -72,7 +62,7 @@ function Container({ divisions }) {
 		},
 	];
 
-	const dataDivisions = divisions;
+	const dataDivisions = useDivisions();
 
 	function onChange(pagination, filters, sorter, extra) {
 		console.log("params", pagination, filters, sorter, extra);
@@ -84,6 +74,7 @@ function Container({ divisions }) {
 				dataSource={dataDivisions}
 				onChange={onChange}
 				style={{ marginLeft: 20, marginRight: 20 }}
+				bordered
 			/>
 		</div>
 	);

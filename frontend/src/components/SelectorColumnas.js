@@ -1,10 +1,14 @@
 import React from "react";
 import { Select } from "antd";
 import "antd/dist/antd.css";
+import { useColumns } from "../redux/selectors";
+
 const { Option } = Select;
 
 function SelectorColumnas() {
-	//hacer fetch para llenar las options********************
+
+	const dataColumns = useColumns();
+
 	function onChange(value) {
 		console.log(`selected ${value}`);
 	}
@@ -34,7 +38,15 @@ function SelectorColumnas() {
 			filterOption={(input, option) =>
 				option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
 			}
-		></Select>
+		>
+			{dataColumns.map((division, index) => {
+				return (
+					<Option value={division} key={index}>
+						{division}
+					</Option>
+				);
+			})}
+		</Select>
 	);
 }
 
